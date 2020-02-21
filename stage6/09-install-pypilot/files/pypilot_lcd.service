@@ -1,0 +1,11 @@
+[Unit]
+Description=pypilot_lcd
+DefaultDependencies=false
+
+[Service]
+Type=simple
+ExecStart=pypilot_lcd
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=2

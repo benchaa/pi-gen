@@ -1,0 +1,11 @@
+[Unit]
+Description=pypilot_webapp
+DefaultDependencies=false
+
+[Service]
+Type=simple
+ExecStart=pypilot_webapp 8000
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=2

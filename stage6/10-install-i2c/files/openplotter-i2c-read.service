@@ -1,0 +1,4 @@
+[Service]
+ExecStart=openplotter-i2c-read
+StandardOutput=syslog
+StandardError=syslog

@@ -1,0 +1,12 @@
+[Unit]
+Description=pypilot
+DefaultDependencies=false
+Conflicts=pypilot_boatimu.service
+
+[Service]
+Type=simple
+ExecStart=pypilot
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=2
