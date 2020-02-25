@@ -1,4 +1,0 @@
-START_DAEMON="false"
-USBAUTO="false"
-DEVICES=""
-GPSD_OPTIONS="-n -b"

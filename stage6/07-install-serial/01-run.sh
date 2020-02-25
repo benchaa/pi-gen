@@ -1,3 +1,5 @@
 #!/bin/bash -e
 
-install -m 644 files/gpsd	"${ROOTFS_DIR}/etc/default/"
+on_chroot << EOF
+sudo -u ${FIRST_USER_NAME} sudo serialPostInstall
+EOF
