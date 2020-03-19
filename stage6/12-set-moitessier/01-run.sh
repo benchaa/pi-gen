@@ -23,9 +23,13 @@ systemctl enable pypilot_boatimu
 systemctl enable openplotter-pypilot-read
 systemctl enable openplotter-i2c-read
 
-kernel=$(uname -r)
-kernel0="$(cut -d'-' -f1 <<<"$kernel")"
-wget -r -l1 -np -nd -A .deb -N https://get.rooco.tech/moitessier/buster/release/$kernel0/latest/ || true
-dpkg -i moitessier_$kernel0_*_armhf.deb || true
-rm -f moitessier_$kernel0_*_armhf.deb || true
+dpkg -i /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb
 EOF
+
+#on_chroot << EOF
+#kernel=$(uname -r)
+#kernel0="$(cut -d'-' -f1 <<<"$kernel")"
+#wget -r -l1 -np -nd -A .deb -N https://get.rooco.tech/moitessier/buster/release/$kernel0/latest/ || true
+#dpkg -i moitessier_$kernel0_*_armhf.deb || true
+#rm -f moitessier_$kernel0_*_armhf.deb || true
+#EOF
