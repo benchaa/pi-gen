@@ -24,6 +24,7 @@ systemctl enable openplotter-pypilot-read
 systemctl enable openplotter-i2c-read
 
 dpkg -i /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb || true
+dpkg --configure -a
 EOF
 
 #on_chroot << EOF
