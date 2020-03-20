@@ -23,8 +23,16 @@ systemctl enable pypilot_boatimu
 systemctl enable openplotter-pypilot-read
 systemctl enable openplotter-i2c-read
 
-dpkg -i /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb || true
-dpkg --configure -a
+dpkg --unpack /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb
+rm /var/lib/dpkg/info/moitessier.postinst -f
+dpkg --configure moitessier
+EOF
+
+install -m 644 files/moitessier.shutdown.service	"${ROOTFS_DIR}/etc/systemd/system/"
+on_chroot << EOF
+cp /home/pi/moitessier/scripts/load_driver_moitessier /etc/init.d/
+update-rc.d -f load_driver_moitessier defaults
+chown root:root /home/pi/moitessier/app/moitessier_ctrl/default_config.xml
 EOF
 
 #on_chroot << EOF
