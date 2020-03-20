@@ -23,7 +23,7 @@ systemctl enable pypilot_boatimu
 systemctl enable openplotter-pypilot-read
 systemctl enable openplotter-i2c-read
 
-dpkg -i /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb
+dpkg -i /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb || true
 EOF
 
 #on_chroot << EOF
