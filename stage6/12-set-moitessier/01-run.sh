@@ -19,6 +19,7 @@ echo "i2c-dev" >> "/etc/modules"
 sed -i 's/#dtparam=i2c_arm=on/dtparam=i2c_arm=on/g' /boot/config.txt
 sed -i 's/#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
 
+systemctl daemon-reload
 systemctl enable pypilot_boatimu
 systemctl enable openplotter-pypilot-read
 systemctl enable openplotter-i2c-read
