@@ -22,7 +22,7 @@ sed -i 's/#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
 systemctl daemon-reload
 systemctl enable pypilot_boatimu
 systemctl enable openplotter-pypilot-read
-systemctl enable openplotter-i2c-read
+systemctl enable openplotter-i2c-read.service
 
 dpkg --unpack /home/${FIRST_USER_NAME}/.openplotter/moitessier/moitessier_*_armhf.deb
 rm /var/lib/dpkg/info/moitessier.postinst -f
